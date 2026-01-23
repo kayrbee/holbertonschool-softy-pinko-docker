@@ -3,7 +3,7 @@ services:
     build:
       context: ./front-end
       dockerfile: Dockerfile
-    image: softy-pinko-front-end:task4
+    image: softy-pinko-front-end:task5
     ports: 
       - "9000:9000"
     depends_on: [backend]
@@ -11,6 +11,6 @@ services:
     build:
       context: ./back-end
       dockerfile: Dockerfile
-    image: softy-pinko-back-end:task4
+    image: softy-pinko-back-end:task5
     ports:
       - "5252:5252"
