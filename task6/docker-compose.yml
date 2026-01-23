@@ -1,0 +1,26 @@
+services:
+  frontend:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    image: softy-pinko-front-end:task5
+    # Explicit volume path avoids accidental overwrites
+    volumes:
+      - ./front-end:/app
+    depends_on: [backend]
+  backend:
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile
+    image: softy-pinko-back-end:task5
+    volumes:
+      - ./back-end:/app
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    image: softy-pinko-proxy:task5
+    volumes:
+      - ./proxy:/app
+    ports: 
+      - "80:80"
