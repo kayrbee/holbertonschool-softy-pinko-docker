@@ -14,3 +14,10 @@ services:
     image: softy-pinko-back-end:task5
     ports:
       - "5252:5252"
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    image: softy-pinko-proxy
+    ports: 
+      - "80:80"
