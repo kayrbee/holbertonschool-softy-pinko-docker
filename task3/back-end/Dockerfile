@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 # install dependencies
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y python3 python3-pip
-RUN pip install flask
+RUN pip install flask && pip install flask-cors
 
 # SET working dir & copy the code files
 WORKDIR /app
